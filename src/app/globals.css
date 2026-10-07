@@ -10893,3 +10893,74 @@ button:hover .ink-menu-trigger-mark {
     background-color: transparent !important;
   }
 }
+
+
+/* ==========================================================
+   INK BY NALA — ADAPTIVE HEADER
+   White on dark / black on light
+   ========================================================== */
+
+.ink-site-header {
+  /*
+   * Header artwork is authored in white.
+   * Difference blending automatically turns it dark
+   * over white/light sections while keeping it light
+   * over dark imagery.
+   */
+  color: #ffffff;
+
+  mix-blend-mode: difference;
+
+  /*
+   * Keep the blend limited to the visible header contents.
+   */
+  background: transparent !important;
+}
+
+
+/* Force navigation and menu trigger to inherit the adaptive tone */
+.ink-site-header a,
+.ink-site-header button,
+.ink-site-header nav {
+  color: inherit !important;
+}
+
+
+/*
+ * The logo is part of the same blended header layer.
+ * Keep its original transparent PNG untouched.
+ */
+.ink-site-header img {
+  opacity: 1;
+}
+
+
+/* Menu radial mark must use the same adaptive colour */
+.ink-site-header .ink-menu-trigger-mark {
+  color: currentColor;
+}
+
+
+/*
+ * Remove the previously hard-coded dark centre.
+ * Otherwise that part does not invert with the rest
+ * of the header.
+ */
+.ink-site-header .ink-menu-trigger-mark::before,
+.ink-site-header .ink-menu-trigger-mark::after {
+  background: currentColor;
+}
+
+
+/* Keep normal interaction behaviour */
+.ink-site-header a,
+.ink-site-header button {
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.ink-site-header a:hover,
+.ink-site-header button:hover {
+  opacity: 0.72;
+}

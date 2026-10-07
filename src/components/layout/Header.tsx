@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-[80]">
+      <header className="ink-site-header fixed inset-x-0 top-0 z-[80]">
         <div className="mx-auto flex w-full items-center justify-between px-5 py-5 sm:px-8 sm:py-6 lg:px-12">
           <Link href="#hero" aria-label="Ink By Nala Tattoos home">
             <Image
