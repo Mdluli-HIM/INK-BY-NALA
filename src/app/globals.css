@@ -10849,7 +10849,47 @@ button:hover .ink-menu-trigger-mark {
 
 @media (max-width: 767px) {
   .concrete-section-group {
+    /*
+     * Keep the concrete texture scaled to the PHONE WIDTH,
+     * rather than stretching one image across the full
+     * height of the very tall mobile section.
+     */
     background-position: center top;
-    background-size: auto 100%;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+
+  /*
+   * Mobile-specific Stats containers must remain transparent
+   * so the shared concrete wallpaper stays visible behind them.
+   */
+  .concrete-section-group .team-stats__mobile,
+  .concrete-section-group .team-stats__mobile-row,
+  .concrete-section-group .team-stats__mobile-stat {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /*
+   * Keep the texture visible but subtle.
+   */
+  .concrete-section-group::before {
+    background: rgba(239, 239, 236, 0.025);
+  }
+}
+
+/* ==========================================================
+   MOBILE CONCRETE — TRANSPARENCY SAFEGUARD
+   ========================================================== */
+
+@media (max-width: 767px) {
+  .concrete-section-group .about-team-v2,
+  .concrete-section-group .about-team-v2__inner,
+  .concrete-section-group .team-stats,
+  .concrete-section-group .team-stats__mobile,
+  .concrete-section-group .team-stats__mobile-row,
+  .concrete-section-group .team-stats__mobile-stat {
+    background-color: transparent !important;
   }
 }
