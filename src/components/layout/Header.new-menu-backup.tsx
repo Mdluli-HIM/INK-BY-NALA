@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Sparkles } from "lucide-react";
 import SiteMenuOverlay from "@/components/layout/SiteMenuOverlay";
 import { siteConfig } from "@/data/site";
 
@@ -56,7 +57,7 @@ function Header() {
               aria-label="Open menu"
             >
               <span>Menu</span>
-              <span className="ink-menu-trigger-mark" aria-hidden="true" />
+              <Sparkles className="h-5 w-5" />
             </button>
           </div>
 
@@ -67,7 +68,7 @@ function Header() {
             aria-label="Open menu"
           >
             <span>Menu</span>
-            <span className="ink-menu-trigger-mark" aria-hidden="true" />
+            <Sparkles className="h-5 w-5" />
           </button>
         </div>
       </header>

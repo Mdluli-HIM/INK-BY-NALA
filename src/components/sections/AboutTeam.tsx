@@ -23,7 +23,7 @@ export function AboutTeam() {
 
         <div className="about-team-v2__stage">
           {/* LEFT IMAGE */}
-          <div className="about-team-v2__side about-team-v2__side--left">
+          <div className="about-team-v2__side about-team-v2__side--left relative">
             <Image
               src="/images/about/team-left.jpg"
               alt="Ink By Nala tattoo studio"
@@ -36,7 +36,7 @@ export function AboutTeam() {
           </div>
 
           {/* MAIN IMAGE */}
-          <div className="about-team-v2__main">
+          <div className="about-team-v2__main relative">
             <Image
               src="/images/about/team-main.jpg"
               alt="Ink By Nala tattoo artists"
@@ -53,7 +53,7 @@ export function AboutTeam() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="about-team-v2__side about-team-v2__side--right">
+          <div className="about-team-v2__side about-team-v2__side--right relative">
             <RadialMark className="about-team-v2__mark about-team-v2__mark--right" />
 
             <Image
