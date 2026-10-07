@@ -11,29 +11,29 @@ export type PricingPackage = {
 export const pricingPackages: PricingPackage[] = [
   {
     id: "01",
-    name: "Quantum",
+    name: "Custom",
     description:
-      "This package includes the work of the master. R2 700 per hour of work, R12 500 per session.",
-    price: "R2 700",
+      "Every tattoo is quoted individually according to the concept, placement, size, detail and complexity of the work.",
+    price: "GET A QUOTE",
     image: "/images/pricing/quantum.jpg",
     theme: "light",
   },
   {
     id: "02",
-    name: "Hyper",
+    name: "Half Day",
     description:
-      "This package includes the work of the master. R18 000–R22 000 per session.",
-    price: "R18k–R22k",
+      "A session of up to approximately four hours for focused pieces, panels and work that can be completed within a shorter sitting.",
+    price: "ENQUIRE",
     image: "/images/pricing/hyper.jpg",
     theme: "cyan",
     featured: true,
   },
   {
     id: "03",
-    name: "Blast",
+    name: "Full Day",
     description:
-      "This package includes the work of the master. R36 000+ per session.",
-    price: "R36k+",
+      "Longer sessions for larger, highly detailed work such as sleeves and complex realism pieces. Contact the studio for a current quote.",
+    price: "ENQUIRE",
     image: "/images/pricing/blast.jpg",
     theme: "dark",
   },

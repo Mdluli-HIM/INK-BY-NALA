@@ -169,14 +169,16 @@ export function Header() {
                     </span>
 
                     <a
-                      href={`mailto:${siteConfig.email}`}
+                      href={siteConfig.whatsapp}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      {siteConfig.email}
+                      WhatsApp {siteConfig.phone}
                     </a>
                   </div>
 
                   <p className="hype-menu-panel__copyright">
-                    © HYPE 2026
+                    © INK BY NALA 2026
                     <br />
                     All rights reserved
                   </p>

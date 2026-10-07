@@ -66,11 +66,11 @@ function PricingCard({
         </strong>
 
         <Link
-          href="/artists"
+          href="/contact"
           className="pricing-card__button group"
         >
           <span>
-            Choose artists
+            Get a quote
           </span>
 
           <span className="pricing-card__button-arrow">
@@ -114,9 +114,9 @@ export function PricingSection() {
             </div>
 
             <h2>
-              What is the price
+              How does pricing
               <br />
-              of working with us
+              work with us
             </h2>
           </div>
 
@@ -124,13 +124,13 @@ export function PricingSection() {
             <div className="pricing-section__aside-line" />
 
             <p>
-              Three ways to work
+              Every piece is custom.
               <br />
-              with our master.
+              Pricing depends on
               <br />
-              Same dedication.
+              size, detail and
               <br />
-              Different scale.
+              session length.
             </p>
 
             <span className="pricing-section__cyan-line" />

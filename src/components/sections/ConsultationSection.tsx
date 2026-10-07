@@ -46,7 +46,7 @@ export function ConsultationSection() {
         <header className="consultation-v2__header">
           <div className="consultation-v2__eyebrow">
             <span>
-              Tattoo studio
+              Appointment only
             </span>
 
             <span />
@@ -55,13 +55,13 @@ export function ConsultationSection() {
           </div>
 
           <h2>
-            Get a free
+            Start your
             <br />
-            consultation
+            tattoo project
           </h2>
 
           <p>
-            Your idea. Our artists. A unique design.
+            Your idea. Your story. A custom design.
           </p>
         </header>
 
@@ -75,30 +75,30 @@ export function ConsultationSection() {
             className="consultation-v2__info"
           >
             <span className="consultation-v2__info-kicker">
-              In addition to the consultation
+              Custom work from the first conversation
             </span>
 
             <h3>
-              A team of our
+              Bring us your
               <br />
-              artists will help
+              idea. We&apos;ll help
               <br />
-              you create a free
+              turn it into
               <br />
-              sketch
+              original ink
             </h3>
 
             <p>
-              We&apos;ll discuss your concept,
-              help refine the idea and match you
-              with an artist whose style is
-              suitable for the project.
+              Send us your concept, references and placement.
+              We&apos;ll discuss the project, prepare a quote
+              and develop a custom design or stencil before
+              your appointment.
             </p>
 
             <div className="consultation-v2__info-meta">
-              <span>[ Free consultation ]</span>
+              <span>[ Custom consultation ]</span>
 
-              <span>[ Custom design ]</span>
+              <span>[ Appointment only ]</span>
             </div>
           </aside>
 
@@ -196,7 +196,7 @@ export function ConsultationSection() {
                 className="consultation-v2__submit group"
               >
                 <span>
-                  Book a consultation
+                  Request an appointment
                 </span>
 
                 <span>

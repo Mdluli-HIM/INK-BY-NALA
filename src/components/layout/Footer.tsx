@@ -23,7 +23,7 @@ export function Footer() {
             <span className="hype-footer-v2__corner" />
 
             <strong>
-              HYPE
+              INK
             </strong>
           </div>
 
@@ -36,8 +36,12 @@ export function Footer() {
               <span />
             </div>
 
-            <a href={`mailto:${siteConfig.email}`}>
-              {siteConfig.email}
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp {siteConfig.phone}
             </a>
           </div>
 
@@ -134,7 +138,7 @@ export function Footer() {
             className="hype-footer-v2__consult group"
           >
             <span>
-              Book a free consult
+              Start your tattoo
             </span>
 
             <span>
@@ -161,7 +165,7 @@ export function Footer() {
           </div>
 
           <p>
-            © HYPE 2026
+            © INK BY NALA 2026
             <br />
             All rights reserved
           </p>

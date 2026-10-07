@@ -13,7 +13,7 @@ export function AboutTeam() {
       <div className="hype-shell about-team-v2__inner">
         <div className="about-team-v2__heading">
           <span className="about-team-v2__eyebrow">
-            [ 002 ] / The studio
+            [ 002 ] / Ink By Nala
           </span>
 
           <h2>
@@ -26,7 +26,7 @@ export function AboutTeam() {
           <div className="about-team-v2__side about-team-v2__side--left">
             <Image
               src="/images/about/team-left.jpg"
-              alt="HYPE Tattoo studio"
+              alt="Ink By Nala tattoo studio"
               fill
               sizes="(max-width: 768px) 42vw, 280px"
               className="about-team-v2__photo"
@@ -39,7 +39,7 @@ export function AboutTeam() {
           <div className="about-team-v2__main">
             <Image
               src="/images/about/team-main.jpg"
-              alt="HYPE Tattoo team"
+              alt="Ink By Nala tattoo artists"
               fill
               priority
               sizes="(max-width: 768px) 92vw, 680px"
@@ -68,17 +68,17 @@ export function AboutTeam() {
 
         <div className="about-team-v2__content">
           <h3>
-            We&apos;re bringing your unique
+            Custom ink built around
             <br className="hidden sm:block" />
-            {" "}vision to life through ink
+            {" "}your story
           </h3>
 
           <p>
-            Each member of our team brings their own style,
-            experience and creative approach to the studio.
-            Together, we turn personal ideas into custom artwork
-            while keeping the process professional, collaborative
-            and considered from start to finish.
+            Ink By Nala is a focused, appointment-only studio built
+            around precision, patience and personal meaning. Moh and
+            Eugene work closely with each client to turn references,
+            memories and ideas into original tattoo designs rather
+            than simply copying existing work.
           </p>
 
           <HypeButton

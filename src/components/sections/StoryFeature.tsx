@@ -147,7 +147,7 @@ export function StoryFeature() {
           <span className="story-feature__eyebrow-line" />
 
           <span>
-            Art / Identity / Ink
+            Meaning / Detail / Ink
           </span>
         </div>
 
@@ -165,7 +165,7 @@ export function StoryFeature() {
           <div className="story-feature__intro">
             <p>
               Custom tattooing built around meaning,
-              memory and personal expression.
+              detail and personal expression.
             </p>
 
             <Link
@@ -231,11 +231,11 @@ export function StoryFeature() {
           </p>
 
           <span>
-            Your idea.
-            <br />
-            Your artist.
+            Your reference.
             <br />
             Your story.
+            <br />
+            Your tattoo.
           </span>
         </div>
       </div>

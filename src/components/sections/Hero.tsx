@@ -31,9 +31,9 @@ export function Hero() {
         <div className="flex flex-1 items-center justify-center pt-[90px]">
           <div className="w-full text-center">
             <h1 className="hero-heading">
-              We make art not
+              Ink that tells
               <br />
-              just tattoos
+              your story
             </h1>
 
             <div className="mt-8 flex justify-center md:mt-10">
@@ -41,7 +41,7 @@ export function Hero() {
                 href="/contact"
                 className="w-full max-w-[410px]"
               >
-                Book a consultation
+                Book an appointment
               </HypeButton>
             </div>
           </div>
