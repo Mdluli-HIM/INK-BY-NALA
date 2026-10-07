@@ -6,6 +6,7 @@ import { InkCursor } from "@/components/motion/InkCursor";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 import "./globals.css";
+import "@fontsource/bebas-neue/400.css";
 
 export const metadata: Metadata = {
   title: {

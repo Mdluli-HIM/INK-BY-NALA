@@ -16,9 +16,16 @@ export default function Home() {
 
       <Hero />
 
-      <AboutTeam />
+      <div className="concrete-section-group">
 
-      <TeamStats />
+
+        <AboutTeam />
+
+
+        <TeamStats />
+
+
+      </div>
 
       <StoryFeature />
 

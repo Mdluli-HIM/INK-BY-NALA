@@ -10446,32 +10446,26 @@ button:hover .ink-menu-trigger-mark {
   }
 }
 
-
 /* ==========================================================
-   INK MENU — REFERENCE NAVIGATION FINAL OVERRIDE
-   Condensed / tight / hand-drawn
+   INK MENU — REFERENCE NAVIGATION
    ========================================================== */
 
 .ink-menu__nav {
   position: absolute;
+  z-index: 30;
 
-  top: 20.5%;
-  left: 4.2%;
+  top: clamp(165px, 21.5vh, 190px);
+  left: clamp(50px, 4.4vw, 78px);
 
-  width: min(44vw, 650px);
+  width: min(560px, 44vw);
 
   display: flex;
   flex-direction: column;
-
   gap: 0;
-
-  z-index: 30;
 }
 
 
-/* ----------------------------------------------------------
-   ROW
----------------------------------------------------------- */
+/* individual rows */
 
 .ink-menu__nav-row {
   position: relative;
@@ -10479,102 +10473,82 @@ button:hover .ink-menu-trigger-mark {
   display: grid;
 
   grid-template-columns:
-    84px
+    clamp(76px, 6vw, 108px)
     minmax(0, 1fr);
 
   align-items: center;
 
-  min-height: 86px;
+  height: clamp(68px, 8.9vh, 82px);
+  min-height: 0;
 
   padding: 0;
 }
 
 
-/* ----------------------------------------------------------
-   NUMBER
----------------------------------------------------------- */
+/* numbers */
 
 .ink-menu__number {
-  display: block;
+  align-self: center;
 
-  padding-top: 5px;
+  padding: 0;
 
   font-family:
     var(--font-geist-mono),
     monospace;
 
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 650;
 
   line-height: 1;
 
-  letter-spacing: 0.22em;
-
-  white-space: nowrap;
+  letter-spacing: 0.24em;
 
   color: #050505;
+
+  white-space: nowrap;
 }
 
 
-/* ----------------------------------------------------------
-   LINK
----------------------------------------------------------- */
+/* main menu typography */
 
 .ink-menu__link {
   position: relative;
 
   display: inline-flex;
+  align-items: center;
 
   width: max-content;
 
-  align-items: center;
-
+  margin: 0;
   padding: 0;
 
   color: #050505;
 
-  /*
-   * Impact gives us the narrow, tall display character
-   * visible in the reference instead of the wide Geist
-   * heading we had before.
-   */
   font-family:
-    Impact,
-    Haettenschweiler,
-    "Arial Narrow Bold",
+    "Bebas Neue",
     "Arial Narrow",
     sans-serif;
 
   font-size:
     clamp(
-      4.1rem,
-      5vw,
-      5.55rem
+      58px,
+      8.6vh,
+      78px
     );
 
   font-weight: 400;
 
-  font-stretch: condensed;
+  line-height: 0.84;
 
-  line-height: 0.82;
-
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 
   text-transform: uppercase;
 
   white-space: nowrap;
-
-  transition:
-    opacity 220ms ease;
-}
-
-.ink-menu__link:hover {
-  opacity: 1;
 }
 
 .ink-menu__link > span:last-child {
   position: relative;
-
   z-index: 4;
 
   display: block;
@@ -10582,7 +10556,7 @@ button:hover .ink-menu-trigger-mark {
 
 
 /* ==========================================================
-   HAND DRAWN ACTIVE MARK
+   ACTIVE SCRIBBLE
    ========================================================== */
 
 .ink-menu__active {
@@ -10590,17 +10564,15 @@ button:hover .ink-menu-trigger-mark {
 
   z-index: 2;
 
-  top: 50%;
-  left: -17px;
+  top: 49%;
+  left: -14px;
 
-  width:
-    calc(100% + 38px);
-
-  height:
-    calc(100% + 32px);
+  width: calc(100% + 30px);
+  height: 1.08em;
 
   transform:
-    translateY(-50%);
+    translateY(-50%)
+    rotate(-0.5deg);
 
   pointer-events: none;
 
@@ -10614,25 +10586,17 @@ button:hover .ink-menu-trigger-mark {
   height: 100%;
 
   overflow: visible;
-
-  transform:
-    rotate(-0.8deg);
-
-  transform-origin:
-    center;
 }
 
 
-/* ----------------------------------------------------------
-   DRAW EFFECT
----------------------------------------------------------- */
+/* slightly imperfect hand-drawn line */
 
 .ink-menu__scribble-main {
   stroke-dasharray: 1100;
   stroke-dashoffset: 1100;
 
   animation:
-    ink-menu-draw-main
+    ink-menu-line-draw
     430ms
     cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
@@ -10642,10 +10606,12 @@ button:hover .ink-menu-trigger-mark {
   stroke-dasharray: 900;
   stroke-dashoffset: 900;
 
+  opacity: 0.72;
+
   animation:
-    ink-menu-draw-secondary
-    500ms
-    70ms
+    ink-menu-line-draw
+    470ms
+    50ms
     cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
 }
@@ -10654,29 +10620,17 @@ button:hover .ink-menu-trigger-mark {
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
 
-  opacity: 0.55;
+  opacity: 0.42;
 
   animation:
-    ink-menu-draw-detail
-    340ms
-    120ms
+    ink-menu-line-draw
+    360ms
+    90ms
     ease-out
     forwards;
 }
 
-@keyframes ink-menu-draw-main {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes ink-menu-draw-secondary {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes ink-menu-draw-detail {
+@keyframes ink-menu-line-draw {
   to {
     stroke-dashoffset: 0;
   }
@@ -10684,31 +10638,60 @@ button:hover .ink-menu-trigger-mark {
 
 
 /* ==========================================================
-   LARGE DESKTOP
+   DESKTOP — MATCH REFERENCE PROPORTIONS
    ========================================================== */
 
-@media (min-width: 1500px) {
+@media (min-width: 1280px) and (min-height: 720px) {
+
   .ink-menu__nav {
+    top: 22.5%;
     left: 4.5%;
 
-    width: 670px;
+    width: 560px;
   }
 
   .ink-menu__nav-row {
     grid-template-columns:
-      96px
+      105px
       minmax(0, 1fr);
 
-    min-height: 92px;
+    height: 78px;
   }
 
   .ink-menu__link {
-    font-size:
-      clamp(
-        4.8rem,
-        5vw,
-        5.9rem
-      );
+    font-size: 76px;
+  }
+
+  .ink-menu__number {
+    font-size: 10px;
+  }
+}
+
+
+/* ==========================================================
+   TALL / PORTRAIT DESKTOP
+   Prevent menu from becoming enormous
+   ========================================================== */
+
+@media (min-width: 768px) and (orientation: portrait) {
+
+  .ink-menu__nav {
+    top: 150px;
+    left: 6%;
+
+    width: min(570px, 68vw);
+  }
+
+  .ink-menu__nav-row {
+    grid-template-columns:
+      90px
+      minmax(0, 1fr);
+
+    height: 82px;
+  }
+
+  .ink-menu__link {
+    font-size: 76px;
   }
 }
 
@@ -10717,12 +10700,8 @@ button:hover .ink-menu-trigger-mark {
    LAPTOP
    ========================================================== */
 
-@media (
-  min-width: 768px
-)
-and (
-  max-width: 1199px
-) {
+@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+
   .ink-menu__nav {
     top: 20%;
     left: 4%;
@@ -10732,22 +10711,18 @@ and (
 
   .ink-menu__nav-row {
     grid-template-columns:
-      66px
+      72px
       minmax(0, 1fr);
 
-    min-height: 72px;
-  }
-
-  .ink-menu__number {
-    font-size: 9px;
+    height: clamp(62px, 9vh, 75px);
   }
 
   .ink-menu__link {
     font-size:
       clamp(
-        3.2rem,
-        5.8vw,
-        4.4rem
+        52px,
+        8.4vh,
+        70px
       );
   }
 }
@@ -10758,6 +10733,7 @@ and (
    ========================================================== */
 
 @media (max-width: 767px) {
+
   .ink-menu__nav {
     position: relative;
 
@@ -10767,7 +10743,7 @@ and (
     width: auto;
 
     margin:
-      135px
+      125px
       18px
       0;
   }
@@ -10777,13 +10753,11 @@ and (
       48px
       minmax(0, 1fr);
 
-    min-height: 58px;
+    height: 55px;
   }
 
   .ink-menu__number {
-    padding-top: 2px;
-
-    font-size: 7.5px;
+    font-size: 7px;
 
     letter-spacing: 0.18em;
   }
@@ -10791,32 +10765,91 @@ and (
   .ink-menu__link {
     font-size:
       clamp(
-        2.65rem,
-        12.8vw,
-        3.75rem
+        42px,
+        12vw,
+        58px
       );
 
     line-height: 0.84;
   }
 
   .ink-menu__active {
-    left: -10px;
+    left: -9px;
 
-    width:
-      calc(100% + 23px);
+    width: calc(100% + 20px);
 
-    height:
-      calc(100% + 20px);
+    height: 1.05em;
   }
 }
 
 
 @media (prefers-reduced-motion: reduce) {
+
   .ink-menu__scribble-main,
   .ink-menu__scribble-secondary,
   .ink-menu__scribble-detail {
     animation: none;
-
     stroke-dashoffset: 0;
+  }
+}
+
+/* ==========================================================
+   INK BY NALA — CONTINUOUS CONCRETE BACKGROUND
+   About Team + Team Stats
+   ========================================================== */
+
+.concrete-section-group {
+  position: relative;
+  isolation: isolate;
+
+  background-color: #efefec;
+  background-image: url("/images/textures/concrete-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+
+/* Both sections share the exact same wallpaper */
+.concrete-section-group .about-team,
+.concrete-section-group .about-team-v2,
+.concrete-section-group .team-stats {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+/* Keep section content above the wallpaper */
+.concrete-section-group > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/*
+ * Very subtle wash:
+ * keeps the concrete visible without overpowering
+ * black typography and photography.
+ */
+.concrete-section-group::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    rgba(239, 239, 236, 0.05);
+}
+
+
+@media (max-width: 767px) {
+  .concrete-section-group {
+    background-position: center top;
+    background-size: auto 100%;
   }
 }
