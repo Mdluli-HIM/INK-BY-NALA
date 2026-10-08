@@ -142,7 +142,7 @@ export function StoryFeature() {
 
       <div className="hype-shell story-feature__inner">
         <div className="story-feature__eyebrow">
-          <span>[ 004 ]</span>
+          
 
           <span className="story-feature__eyebrow-line" />
 

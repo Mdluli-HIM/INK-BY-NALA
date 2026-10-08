@@ -16,7 +16,7 @@ export function PortfolioShowcase() {
             <span className="portfolio-showcase__line" />
 
             <span>
-              [ 004 ] / Selected work
+              Selected work
             </span>
 
             <span className="portfolio-showcase__line" />

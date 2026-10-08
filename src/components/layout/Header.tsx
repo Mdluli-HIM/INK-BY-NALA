@@ -7,12 +7,12 @@ import SiteMenuOverlay from "@/components/layout/SiteMenuOverlay";
 import { siteConfig } from "@/data/site";
 
 const navLinks = [
-  { index: "01", label: "Main page", href: "#hero" },
-  { index: "02", label: "About us", href: "#about-team" },
-  { index: "03", label: "Artists", href: "#about-team" },
-  { index: "04", label: "Price", href: "#pricing" },
-  { index: "05", label: "Gallery", href: "#portfolio" },
-  { index: "06", label: "Contact", href: "#consultation" },
+  { label: "Main page", href: "#hero" },
+  { label: "About us", href: "#about-team" },
+  { label: "Artists", href: "#about-team" },
+  { label: "Price", href: "#pricing" },
+  { label: "Gallery", href: "#portfolio" },
+  { label: "Contact", href: "#consultation" },
 ];
 
 function Header() {

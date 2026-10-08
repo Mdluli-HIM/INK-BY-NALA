@@ -39,7 +39,6 @@ function PricingCard({
         />
 
         <div className="pricing-card__image-index">
-          <span>{item.id}</span>
           <span />
         </div>
 
@@ -84,7 +83,6 @@ function PricingCard({
 
         <div className="pricing-card__footer">
           <span>
-            [{item.id.padStart(3, "0")}]
           </span>
 
           <span>

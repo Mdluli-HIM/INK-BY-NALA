@@ -13,7 +13,7 @@ export function AboutTeam() {
       <div className="hype-shell about-team-v2__inner">
         <div className="about-team-v2__heading">
           <span className="about-team-v2__eyebrow">
-            [ 002 ] / Ink By Nala
+            Ink By Nala
           </span>
 
           <h2>

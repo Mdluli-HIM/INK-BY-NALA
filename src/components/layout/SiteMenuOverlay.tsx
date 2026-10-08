@@ -9,7 +9,6 @@ import { siteConfig } from "@/data/site";
 import MenuTalkPanel from "@/components/layout/MenuTalkPanel";
 
 type MenuLink = {
-  index: string;
   label: string;
   href: string;
 };
@@ -24,62 +23,56 @@ function ActiveScribble() {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 500 118"
+      viewBox="0 0 520 70"
       className="ink-menu__scribble"
       preserveAspectRatio="none"
     >
+      {/* Main heavy stroke */}
       <path
         className="ink-menu__scribble-main"
         d="
-          M18 66
-          C22 32 77 17 154 18
-          C253 12 382 17 451 35
-          C486 44 489 67 459 85
-          C414 108 291 105 190 102
-          C91 106 30 96 17 77
-          C12 72 12 68 18 66
+          M8 25
+          C72 20 132 23 197 22
+          C270 21 338 25 405 23
+          C447 22 482 24 512 27
         "
         fill="none"
         stroke="currentColor"
-        strokeWidth="3"
+        strokeWidth="5.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
 
+      {/* Second imperfect stroke */}
       <path
         className="ink-menu__scribble-secondary"
         d="
-          M37 26
-          C135 4 302 12 455 35
+          M16 34
+          C82 29 149 31 214 32
+          C281 33 351 30 417 34
+          C455 36 486 34 507 33
         "
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.3"
+        strokeWidth="3.6"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
 
-      <path
-        className="ink-menu__scribble-secondary"
-        d="
-          M28 100
-          C148 112 320 107 467 88
-        "
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.1"
-        strokeLinecap="round"
-      />
-
+      {/* Long loose lower stroke */}
       <path
         className="ink-menu__scribble-detail"
         d="
-          M71 17
-          C121 12 176 13 221 16
+          M42 43
+          C102 39 166 40 224 42
+          C297 44 349 47 399 51
+          C431 54 455 58 475 62
         "
         fill="none"
         stroke="currentColor"
-        strokeWidth="0.9"
+        strokeWidth="2.1"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -187,7 +180,7 @@ export function SiteMenuOverlay({
 
               return (
                 <motion.div
-                  key={`${link.index}-${link.href}`}
+                  key={link.href}
                   className="ink-menu__nav-row"
                   initial={{
                     opacity: 0,
@@ -213,9 +206,6 @@ export function SiteMenuOverlay({
                     setActiveIndex(index)
                   }
                 >
-                  <span className="ink-menu__number">
-                    [ {link.index} ]
-                  </span>
 
                   <Link
                     href={link.href}
