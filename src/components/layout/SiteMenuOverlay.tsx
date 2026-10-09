@@ -180,7 +180,7 @@ export function SiteMenuOverlay({
 
               return (
                 <motion.div
-                  key={link.href}
+                  key={`${link.label}-${link.href}`}
                   className="ink-menu__nav-row"
                   initial={{
                     opacity: 0,
