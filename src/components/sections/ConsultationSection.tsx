@@ -6,9 +6,10 @@ import {
 } from "react";
 
 import { ArrowUpRight } from "lucide-react";
+import { siteConfig } from "@/data/site";
 
 export function ConsultationSection() {
-  const [submitted, setSubmitted] =
+  const [previewed, setPreviewed] =
     useState(false);
 
   function handleSubmit(
@@ -16,7 +17,7 @@ export function ConsultationSection() {
   ) {
     event.preventDefault();
 
-    setSubmitted(true);
+    setPreviewed(true);
   }
 
   return (
@@ -105,109 +106,115 @@ export function ConsultationSection() {
           {/* FORM */}
           <form
             data-cursor-tone="dark"
+            aria-labelledby="consultation-demo-heading"
+            aria-describedby="consultation-demo-note"
+            autoComplete="off"
+            noValidate
             onSubmit={handleSubmit}
+            onChange={() => setPreviewed(false)}
             className="consultation-v2__form"
           >
+            <h3 id="consultation-demo-heading" className="sr-only">
+              Consultation form demonstration
+            </h3>
+
+            <p id="consultation-demo-note" className="mb-6 text-sm leading-6">
+              Concept preview — this form is a demo. No enquiry is sent.
+              <br />
+              No personal information is needed. Leave the fields blank or
+              use sample details.
+            </p>
+
             <div className="consultation-v2__field">
               <label htmlFor="consultation-name">
-                Full Name*
+                Full name (sample)
               </label>
 
               <input
                 id="consultation-name"
-                name="name"
                 type="text"
-                required
-                autoComplete="name"
+                autoComplete="off"
               />
             </div>
 
             <div className="consultation-v2__field">
               <label htmlFor="consultation-email">
-                E-mail*
+                E-mail (sample)
               </label>
 
               <input
                 id="consultation-email"
-                name="email"
                 type="email"
-                required
-                autoComplete="email"
+                autoComplete="off"
               />
             </div>
 
             <div className="consultation-v2__field">
               <label htmlFor="consultation-phone">
-                Phone number*
+                Phone number (sample)
               </label>
 
               <input
                 id="consultation-phone"
-                name="phone"
                 type="tel"
-                required
-                autoComplete="tel"
+                autoComplete="off"
               />
             </div>
 
             <div className="consultation-v2__field">
               <label htmlFor="consultation-instagram">
-                Instagram
-                <span>
-                  {" "}(optional)
-                </span>
+                Instagram (sample)
               </label>
 
               <input
                 id="consultation-instagram"
-                name="instagram"
                 type="text"
+                autoComplete="off"
               />
             </div>
 
             <div className="consultation-v2__field">
               <label htmlFor="consultation-project">
-                About Project
-                <span>
-                  {" "}(optional)
-                </span>
+                About project (sample)
               </label>
 
               <textarea
                 id="consultation-project"
-                name="project"
                 rows={2}
+                autoComplete="off"
               />
             </div>
 
-            {submitted ? (
-              <div className="consultation-v2__success">
-                <span>
-                  [ Submitted ]
-                </span>
+            <button
+              type="submit"
+              className="consultation-v2__submit group"
+            >
+              <span>
+                Preview request (demo)
+              </span>
 
-                <strong>
-                  Thank you. We&apos;ll be in touch.
-                </strong>
-              </div>
-            ) : (
-              <button
-                type="submit"
-                className="consultation-v2__submit group"
-              >
-                <span>
-                  Request an appointment
-                </span>
+              <span>
+                <ArrowUpRight
+                  size={27}
+                  strokeWidth={1.8}
+                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </span>
+            </button>
 
-                <span>
-                  <ArrowUpRight
-                    size={27}
-                    strokeWidth={1.8}
-                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
-                </span>
-              </button>
-            )}
+            <p role="status" aria-live="polite" className="mt-4 text-sm leading-6">
+              {previewed ? "Demo only. No enquiry has been sent." : ""}
+            </p>
+
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4"
+            >
+              Contact studio on WhatsApp
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
           </form>
         </div>
       </div>

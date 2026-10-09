@@ -10,11 +10,15 @@ import "@fontsource/bebas-neue/400.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "HYPE Tattoo Studio — Toronto",
-    template: "%s | HYPE Tattoo",
+    default: "INK by Nala — Hatfield, Pretoria",
+    template: "%s | INK by Nala",
   },
   description:
-    "HYPE Tattoo Studio in Toronto. Custom tattoos, professional artists and original artwork.",
+    "An independent website concept by Things for INK by Nala, a custom tattoo studio in Hatfield, Pretoria.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({

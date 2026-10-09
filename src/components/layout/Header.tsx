@@ -4,16 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import SiteMenuOverlay from "@/components/layout/SiteMenuOverlay";
-import { siteConfig } from "@/data/site";
+import { headerNavigation, siteConfig } from "@/data/site";
 
-const navLinks = [
-  { label: "Main page", href: "#hero" },
-  { label: "About us", href: "#about-team" },
-  { label: "Artists", href: "#about-team" },
-  { label: "Price", href: "#pricing" },
-  { label: "Gallery", href: "#portfolio" },
-  { label: "Contact", href: "#consultation" },
-];
+const navLinks = headerNavigation.map((item) => ({
+  ...item,
+  label: item.label === "Main" ? "Main page" : item.label,
+}));
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

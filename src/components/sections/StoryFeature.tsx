@@ -169,7 +169,7 @@ export function StoryFeature() {
             </p>
 
             <Link
-              href="/gallery"
+              href="#portfolio"
               className="story-feature__cta group"
             >
               <span>

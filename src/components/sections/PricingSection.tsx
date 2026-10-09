@@ -65,7 +65,7 @@ function PricingCard({
         </strong>
 
         <Link
-          href="/contact"
+          href="#consultation"
           className="pricing-card__button group"
         >
           <span>

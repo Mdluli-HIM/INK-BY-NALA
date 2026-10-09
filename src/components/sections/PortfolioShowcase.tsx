@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { portfolioItems } from "@/data/gallery";
+import { siteConfig } from "@/data/site";
 
 export function PortfolioShowcase() {
   return (
@@ -29,7 +29,7 @@ export function PortfolioShowcase() {
           </h2>
 
           <p>
-            A selection of original work created by HYPE artists
+            A selection of original work created by Ink By Nala
             across different styles, techniques and placements.
           </p>
         </header>
@@ -43,10 +43,12 @@ export function PortfolioShowcase() {
                 `portfolio-work--${item.layout}`,
               ].join(" ")}
             >
-              <Link
-                href="/gallery"
+              <a
+                href={item.image}
+                target="_blank"
+                rel="noreferrer"
                 className="portfolio-work__link"
-                aria-label={`View ${item.style} tattoo`}
+                aria-label={`View ${item.style} tattoo ${item.id} by ${item.artist} (opens image in a new tab)`}
               >
                 <div
                   className="portfolio-work__image"
@@ -79,7 +81,7 @@ export function PortfolioShowcase() {
                     />
                   </div>
                 </div>
-              </Link>
+              </a>
             </article>
           ))}
         </div>
@@ -87,7 +89,7 @@ export function PortfolioShowcase() {
         <footer className="portfolio-showcase__footer">
           <div>
             <span className="hype-label text-white/40">
-              HYPE / Toronto
+              INK by Nala / Hatfield, Pretoria
             </span>
 
             <p>
@@ -97,12 +99,15 @@ export function PortfolioShowcase() {
             </p>
           </div>
 
-          <Link
-            href="/gallery"
+          <a
+            href={siteConfig.instagram}
+            target="_blank"
+            rel="noreferrer"
             className="portfolio-showcase__cta"
+            aria-label="More work on Instagram (opens in a new tab)"
           >
             <span>
-              View full gallery
+              More work on Instagram
             </span>
 
             <span>
@@ -111,7 +116,7 @@ export function PortfolioShowcase() {
                 strokeWidth={1.8}
               />
             </span>
-          </Link>
+          </a>
         </footer>
       </div>
     </section>

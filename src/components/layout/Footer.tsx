@@ -134,7 +134,7 @@ export function Footer() {
           </div>
 
           <Link
-            href="/contact"
+            href="#consultation"
             className="hype-footer-v2__consult group"
           >
             <span>
@@ -160,7 +160,7 @@ export function Footer() {
             className="hype-footer-v2__rule"
           >
             <span />
-            <b>//</b>
+            <b>{"//"}</b>
             <span />
           </div>
 
@@ -168,6 +168,16 @@ export function Footer() {
             © INK BY NALA 2026
             <br />
             All rights reserved
+            <span className="concept-credit">
+              Independent website concept by{" "}
+              <a
+                href="https://thingsdesign.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Things
+              </a>
+            </span>
           </p>
         </div>
       </div>

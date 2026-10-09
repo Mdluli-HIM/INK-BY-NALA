@@ -13,7 +13,7 @@ export function AboutTeam() {
       <div className="hype-shell about-team-v2__inner">
         <div className="about-team-v2__heading">
           <span className="about-team-v2__eyebrow">
-            Ink By Nala
+            INK by Nala
           </span>
 
           <h2>
@@ -48,7 +48,7 @@ export function AboutTeam() {
 
             <div className="about-team-v2__main-index">
               <span>[ TEAM ]</span>
-              <span>Toronto / Studio</span>
+              <span>Hatfield / Pretoria</span>
             </div>
           </div>
 
@@ -74,19 +74,19 @@ export function AboutTeam() {
           </h3>
 
           <p>
-            Ink By Nala is a focused, appointment-only studio built
-            around precision, patience and personal meaning. Moh and
-            Eugene work closely with each client to turn references,
+            INK by Nala is a focused, appointment-only studio built
+            around precision, patience and personal meaning. The team
+            works closely with each client to turn references,
             memories and ideas into original tattoo designs rather
             than simply copying existing work.
           </p>
 
           <HypeButton
-            href="/about"
+            href="#portfolio"
             variant="light"
             className="about-team-v2__button"
           >
-            About us
+            Explore their work
           </HypeButton>
         </div>
       </div>

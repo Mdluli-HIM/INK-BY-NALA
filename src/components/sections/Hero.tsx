@@ -38,7 +38,7 @@ export function Hero() {
 
             <div className="mt-8 flex justify-center md:mt-10">
               <HypeButton
-                href="/contact"
+                href="#consultation"
                 className="w-full max-w-[410px]"
               >
                 Book an appointment
@@ -58,7 +58,17 @@ export function Hero() {
           </div>
 
           <div className="hero-bottom-row__center">
-            ©2026
+            <span className="text-center text-[10px] leading-snug sm:text-xs">
+              Independent website concept by{" "}
+              <a
+                href="https://thingsdesign.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-2 transition-colors duration-300 hover:text-hype-cyan"
+              >
+                Things
+              </a>
+            </span>
           </div>
 
           <div className="hero-bottom-row__right">

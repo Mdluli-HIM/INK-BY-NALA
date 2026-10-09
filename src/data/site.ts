@@ -29,45 +29,26 @@ export const siteConfig = {
 export const headerNavigation = [
   {
     label: "Main",
-    href: "/",
+    href: "#hero",
   },
   {
     label: "About us",
-    href: "/about",
-  },
-  {
-    label: "Artists",
-    href: "/artists",
+    href: "#about-team",
   },
   {
     label: "Price",
-    href: "/pricing",
+    href: "#pricing",
   },
   {
     label: "Gallery",
-    href: "/gallery",
-  },
-];
-
-export const mainNavigation = [
-  {
-    label: "About us",
-    href: "/about",
-  },
-  {
-    label: "Artists",
-    href: "/artists",
-  },
-  {
-    label: "Price",
-    href: "/pricing",
-  },
-  {
-    label: "Gallery",
-    href: "/gallery",
+    href: "#portfolio",
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: "#consultation",
   },
 ];
+
+export const mainNavigation = headerNavigation.filter(
+  (item) => item.href !== "#hero",
+);
