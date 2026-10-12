@@ -80,13 +80,31 @@ export const metadata: Metadata = {
     title: "INKED — Custom Tattoo Studio",
     description:
       "Custom tattoos built around your ideas, references and story.",
-    images: [
-      "/images/hero/hero-main.jpg",
-    ],
+    images: ["/images/hero/hero-main.jpg"],
   },
 
   category: "tattoo studio",
 };
+
+const themeInitScript = `
+(function () {
+  try {
+    var saved = localStorage.getItem("inked-theme");
+
+    var dark =
+      saved === "dark" ||
+      (!saved &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    var root = document.documentElement;
+
+    root.classList.toggle("dark", dark);
+    root.dataset.theme = dark ? "dark" : "light";
+    root.style.colorScheme = dark ? "dark" : "light";
+  } catch (error) {}
+})();
+`;
 
 export default function RootLayout({
   children,
@@ -96,12 +114,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
+      <head>
+        <script
+          id="inked-theme-init"
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
+      </head>
+
       <body>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
 
         <InkCursor />
       </body>

@@ -11467,3 +11467,780 @@ button:hover .ink-menu-trigger-mark {
    */
   --hype-cyan: var(--inked-red);
 }
+
+
+/* ==========================================================
+   INKED — LIGHT / DARK THEME
+   ========================================================== */
+
+:root {
+  --inked-page: #efefec;
+  --inked-surface: #ffffff;
+  --inked-surface-soft: #e8e8e4;
+
+  --inked-text: #0b0b0b;
+  --inked-muted: #5f5f5b;
+
+  --inked-border: rgba(11, 11, 11, 0.2);
+
+  --inked-red: #d71920;
+
+  color-scheme: light;
+}
+
+html.dark {
+  --inked-page: #090909;
+  --inked-surface: #121212;
+  --inked-surface-soft: #191919;
+
+  --inked-text: #f2f1ed;
+  --inked-muted: #aaa8a1;
+
+  --inked-border: rgba(255, 255, 255, 0.18);
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  transition:
+    background-color 320ms ease,
+    color 320ms ease;
+}
+
+html.dark body {
+  background: var(--inked-page);
+  color: var(--inked-text);
+}
+
+
+/* ==========================================================
+   THEME TOGGLE
+   ========================================================== */
+
+.ink-theme-toggle {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  background:
+    rgba(10, 10, 10, 0.14);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.38);
+
+  border-radius: 999px;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.ink-theme-toggle:hover {
+  transform: rotate(8deg);
+
+  background:
+    rgba(215, 25, 32, 0.82);
+
+  border-color:
+    rgba(215, 25, 32, 1);
+}
+
+.ink-theme-toggle:active {
+  transform:
+    rotate(8deg)
+    scale(0.92);
+}
+
+.ink-theme-toggle__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ink-theme-toggle__icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.7;
+}
+
+html.dark .ink-theme-toggle {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.44);
+}
+
+
+/* ==========================================================
+   SHARED CONCRETE / ABOUT / STATS
+   ========================================================== */
+
+html.dark .concrete-section-group {
+  background-color:
+    #101010 !important;
+
+  background-blend-mode:
+    multiply;
+}
+
+html.dark .concrete-section-group::before {
+  background:
+    rgba(3, 3, 3, 0.70) !important;
+}
+
+html.dark .concrete-section-group .about-team,
+html.dark .concrete-section-group .about-team-v2,
+html.dark .concrete-section-group .team-stats,
+html.dark .concrete-section-group .about-team-v2__inner {
+  background:
+    transparent !important;
+
+  background-color:
+    transparent !important;
+
+  color:
+    var(--inked-text);
+}
+
+html.dark .about-team-v2 h1,
+html.dark .about-team-v2 h2,
+html.dark .about-team-v2 h3,
+html.dark .about-team-v2 p,
+html.dark .about-team h1,
+html.dark .about-team h2,
+html.dark .about-team h3,
+html.dark .about-team p,
+html.dark .team-stats h1,
+html.dark .team-stats h2,
+html.dark .team-stats h3,
+html.dark .team-stats p {
+  color:
+    var(--inked-text) !important;
+}
+
+
+/* ==========================================================
+   STORY
+   ========================================================== */
+
+html.dark .story-feature {
+  background:
+    var(--inked-page);
+
+  color:
+    var(--inked-text);
+}
+
+html.dark .story-feature h1,
+html.dark .story-feature h2,
+html.dark .story-feature h3,
+html.dark .story-feature p {
+  color:
+    var(--inked-text);
+}
+
+
+/* ==========================================================
+   PRICING
+   ========================================================== */
+
+html.dark .pricing-section {
+  background:
+    var(--inked-page) !important;
+
+  color:
+    var(--inked-text);
+}
+
+html.dark .pricing-section__heading h2,
+html.dark .pricing-section__eyebrow,
+html.dark .pricing-section__eyebrow p,
+html.dark .pricing-section__aside p {
+  color:
+    var(--inked-text) !important;
+}
+
+html.dark .pricing-section__aside-line {
+  background:
+    var(--inked-border);
+}
+
+html.dark .pricing-card:not(.pricing-card--cyan):not(.pricing-card--dark) {
+  background:
+    var(--inked-surface) !important;
+
+  color:
+    var(--inked-text) !important;
+}
+
+html.dark
+  .pricing-card:not(.pricing-card--cyan):not(.pricing-card--dark)
+  .pricing-card__title,
+html.dark
+  .pricing-card:not(.pricing-card--cyan):not(.pricing-card--dark)
+  .pricing-card__description,
+html.dark
+  .pricing-card:not(.pricing-card--cyan):not(.pricing-card--dark)
+  .pricing-card__price {
+  color:
+    var(--inked-text) !important;
+}
+
+html.dark
+  .pricing-card:not(.pricing-card--cyan):not(.pricing-card--dark)
+  .pricing-card__dash {
+  background:
+    var(--inked-text);
+}
+
+
+/*
+ * The old "cyan" class is now the INKED red feature card.
+ * It stays red in both modes with dark text.
+ */
+html.dark .pricing-card--cyan {
+  background:
+    var(--inked-red) !important;
+
+  color:
+    #0b0b0b !important;
+}
+
+html.dark .pricing-card--cyan .pricing-card__title,
+html.dark .pricing-card--cyan .pricing-card__description,
+html.dark .pricing-card--cyan .pricing-card__price {
+  color:
+    #0b0b0b !important;
+}
+
+
+/* Existing black card remains intentionally black. */
+
+html.dark .pricing-card--dark {
+  background:
+    #050505 !important;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   PORTFOLIO
+   ========================================================== */
+
+/*
+ * Portfolio already has a dark editorial identity.
+ * Preserve it instead of inverting its photographs.
+ */
+html.dark .portfolio-showcase {
+  background:
+    #080808;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   CONSULTATION
+   ========================================================== */
+
+html.dark .consultation-v2 {
+  color:
+    var(--inked-text);
+}
+
+html.dark .consultation-v2 form {
+  color:
+    var(--inked-text);
+}
+
+html.dark .consultation-v2 form input,
+html.dark .consultation-v2 form textarea,
+html.dark .consultation-v2 form select {
+  color:
+    var(--inked-text);
+
+  border-color:
+    var(--inked-border);
+}
+
+html.dark .consultation-v2 form input::placeholder,
+html.dark .consultation-v2 form textarea::placeholder {
+  color:
+    rgba(242, 241, 237, 0.48);
+}
+
+
+/* ==========================================================
+   SELECTION / SCROLLBAR
+   ========================================================== */
+
+html.dark ::selection {
+  background:
+    var(--inked-red);
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  .ink-theme-toggle {
+    transition:
+      none !important;
+  }
+}
+
+
+/* ==========================================================
+   INKED — THEME-AWARE INK CURSOR
+   ========================================================== */
+
+/*
+ * Canvas strokes are drawn in JavaScript.
+ * In dark mode this filter turns any rendered ink colour
+ * into warm white while preserving its alpha/brush texture.
+ */
+html.dark .hype-ink-cursor {
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(96%)
+    drop-shadow(0 0 4px rgba(215, 25, 32, 0.26));
+
+  transition:
+    filter 280ms ease;
+}
+
+/*
+ * The physical cursor tip follows the same dark-mode treatment.
+ * !important ensures any inline colour set by the cursor script
+ * does not make it disappear against the dark surface.
+ */
+html.dark .hype-ink-tip {
+  background:
+    #f4f2ed !important;
+
+  border-color:
+    rgba(255, 255, 255, 0.42) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(215, 25, 32, 0.28),
+    0 0 12px rgba(215, 25, 32, 0.30);
+
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+/*
+ * Keep the existing cursor untouched in light mode.
+ */
+html:not(.dark) .hype-ink-cursor {
+  filter:
+    none;
+}
+
+
+/* ==========================================================
+   INKED — DARK MODE CONTRAST REFINEMENT
+   ========================================================== */
+
+html.dark .concrete-section-group {
+  background-color: #111111 !important;
+  background-blend-mode: normal !important;
+}
+
+html.dark .concrete-section-group::before {
+  background: rgba(5, 5, 5, 0.72) !important;
+}
+
+
+/* ABOUT CTA */
+
+html.dark .about-team__cta .hype-cta--light,
+html.dark .about-team-v2 .hype-cta--light {
+  color: #f4f2ed !important;
+}
+
+html.dark .about-team__cta .hype-cta__label,
+html.dark .about-team-v2 .hype-cta__label {
+  color: #f4f2ed !important;
+  border-color: rgba(255, 255, 255, 0.32) !important;
+}
+
+html.dark .about-team__cta .hype-cta--light .hype-cta__label,
+html.dark .about-team-v2 .hype-cta--light .hype-cta__label {
+  background-image:
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed),
+    linear-gradient(#f4f2ed, #f4f2ed) !important;
+}
+
+html.dark .about-team__cta .hype-cta__arrow,
+html.dark .about-team-v2 .hype-cta__arrow {
+  background: var(--inked-red) !important;
+  color: #0b0b0b !important;
+}
+
+
+/* ABOUT — MAIN TATTOO ARTWORK */
+
+/*
+ * Light mode uses a black-on-white artwork.
+ * In dark mode:
+ * - invert makes the subject light
+ * - screen removes the dark image background
+ * - only this centre image is affected
+ */
+html.dark .about-team-v2 img[src*="team-main"],
+html.dark .about-team img[src*="team-main"] {
+  filter:
+    grayscale(1)
+    brightness(0.82)
+    contrast(1.12) !important;
+
+  mix-blend-mode: normal !important;
+  opacity: 1;
+}
+
+
+/* TEAM STATS */
+
+html.dark .team-stats {
+  color: #f4f2ed;
+}
+
+html.dark .team-stats__desktop {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark .team-stats__hover-column {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark .team-stats__index {
+  color: #f4f2ed !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html.dark .team-stats__copy strong,
+html.dark .team-stats__copy p {
+  color: #f4f2ed !important;
+}
+
+
+/* subtle texture illumination */
+
+html.dark .concrete-section-group {
+  position: relative;
+}
+
+html.dark .concrete-section-group::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(255, 255, 255, 0.045),
+      transparent 44%
+    );
+}
+
+html.dark .concrete-section-group > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* INKED theme toggle — red brand accent */
+.ink-theme-toggle:hover,
+.ink-theme-toggle:focus-visible {
+  background: #d71920 !important;
+  border-color: #d71920 !important;
+  color: #ffffff !important;
+}
+
+html.dark .ink-theme-toggle:hover,
+html.dark .ink-theme-toggle:focus-visible {
+  background: #d71920 !important;
+  border-color: #d71920 !important;
+  color: #ffffff !important;
+}
+
+
+/* ==========================================================
+   INKED — CONSULTATION DARK MODE
+   ========================================================== */
+
+html.dark #consultation {
+  color: #f4f2ed;
+}
+
+/* Right-side form panel */
+html.dark #consultation form,
+html.dark #consultation .consultation-v2__form,
+html.dark #consultation .consultation-v2__right {
+  background: #101010 !important;
+  color: #f4f2ed !important;
+}
+
+
+/* Form intro / helper copy */
+
+html.dark #consultation form p,
+html.dark #consultation form label,
+html.dark #consultation .consultation-v2__form p,
+html.dark #consultation .consultation-v2__form label {
+  color: rgba(244, 242, 237, 0.72) !important;
+}
+
+
+/* Inputs */
+
+html.dark #consultation input,
+html.dark #consultation textarea,
+html.dark #consultation select {
+  background: transparent !important;
+  color: #f4f2ed !important;
+
+  border-color:
+    rgba(255, 255, 255, 0.28) !important;
+
+  caret-color: #d71920;
+}
+
+html.dark #consultation input::placeholder,
+html.dark #consultation textarea::placeholder {
+  color:
+    rgba(244, 242, 237, 0.48) !important;
+
+  opacity: 1;
+}
+
+
+/* Focus */
+
+html.dark #consultation input:focus,
+html.dark #consultation textarea:focus,
+html.dark #consultation select:focus {
+  outline: none;
+
+  border-color:
+    #d71920 !important;
+}
+
+
+/* Main form CTA */
+
+html.dark #consultation form button[type="submit"] {
+  background:
+    transparent !important;
+
+  color:
+    #f4f2ed !important;
+
+  border-color:
+    rgba(255, 255, 255, 0.68) !important;
+}
+
+html.dark #consultation form button[type="submit"]:hover {
+  border-color:
+    #d71920 !important;
+}
+
+
+/* Right-hand arrow block */
+
+html.dark #consultation form button[type="submit"] > *:last-child {
+  background:
+    #d71920 !important;
+
+  color:
+    #0b0b0b !important;
+}
+
+
+/* Bottom contact link */
+
+html.dark #consultation a {
+  color:
+    rgba(244, 242, 237, 0.76);
+}
+
+html.dark #consultation a:hover {
+  color:
+    #d71920;
+}
+
+
+/* ==========================================================
+   INKED — HEADER / NAV STACKING SAFEGUARD
+   ========================================================== */
+
+.ink-site-header {
+  position: fixed !important;
+  inset: 0 0 auto 0;
+
+  z-index: 99990 !important;
+  isolation: isolate;
+
+  pointer-events: none;
+}
+
+/* Keep the actual header controls interactive */
+.ink-site-header > *,
+.ink-site-header a,
+.ink-site-header button {
+  pointer-events: auto;
+}
+
+/* Logo + navigation always stay above header decoration */
+.ink-site-header a,
+.ink-site-header nav,
+.ink-site-header button,
+.ink-site-header img,
+.ink-menu-trigger-mark,
+.ink-theme-toggle {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Main website content must always stay below the fixed navigation */
+
+main,
+footer,
+section {
+  position: relative;
+  z-index: 1;
+}
+
+
+/*
+ * Some sections contain animated images/pseudo elements with
+ * their own stacking contexts. Keep them under the global header.
+ */
+.concrete-section-group,
+.about-team,
+.about-team-v2,
+.team-stats,
+.story-feature,
+.portfolio-showcase,
+.pricing-section,
+.consultation-v2,
+.hype-footer-v2 {
+  z-index: 1;
+}
+
+
+/* Full-screen menu must sit above absolutely everything */
+
+.ink-menu-overlay,
+.ink-menu,
+[data-site-menu-overlay] {
+  position: fixed;
+  z-index: 100000 !important;
+}
+
+
+/* ==========================================================
+   INKED — TRANSPARENT HEADER STACKING
+   ========================================================== */
+
+.ink-site-header {
+  position: fixed !important;
+  inset: 0 0 auto 0;
+
+  z-index: 99990 !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  pointer-events: none;
+}
+
+.ink-site-header > *,
+.ink-site-header a,
+.ink-site-header button {
+  pointer-events: auto;
+}
+
+.ink-site-header a,
+.ink-site-header nav,
+.ink-site-header button,
+.ink-site-header img,
+.ink-theme-toggle,
+.ink-menu-trigger-mark {
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep sections underneath the header */
+main,
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Menu overlay always wins */
+.ink-menu-overlay,
+.ink-menu,
+[data-site-menu-overlay] {
+  z-index: 100000 !important;
+}
+
+
+/* Adaptive header contrast */
+.ink-site-header {
+  mix-blend-mode: difference;
+  color: #ffffff;
+}
+
+.ink-site-header img,
+.ink-site-header nav,
+.ink-site-header a,
+.ink-site-header button {
+  color: inherit;
+}

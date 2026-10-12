@@ -3,7 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
 import SiteMenuOverlay from "@/components/layout/SiteMenuOverlay";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { headerNavigation, siteConfig } from "@/data/site";
 
 const navLinks = headerNavigation.map((item) => ({
@@ -16,7 +18,7 @@ function Header() {
 
   return (
     <>
-      <header className="ink-site-header fixed inset-x-0 top-0 z-[80]">
+      <header className="ink-site-header fixed inset-x-0 top-0 z-[99990]">
         <div className="mx-auto flex w-full items-center justify-between px-5 py-5 sm:px-8 sm:py-6 lg:px-12">
           <Link href="#hero" aria-label="INKED home">
             <Image
@@ -29,26 +31,43 @@ function Header() {
             />
           </Link>
 
-          <div className="hidden items-center gap-8 lg:flex">
-            <nav className="flex items-center gap-8 text-sm font-semibold text-white">
-              <Link href="#hero" className="transition-opacity hover:opacity-70">
+          <div className="hidden items-center gap-7 lg:flex">
+            <nav className="flex items-center gap-8 text-sm font-semibold">
+              <Link
+                href="#hero"
+                className="transition-opacity hover:opacity-70"
+              >
                 Main
               </Link>
-              <Link href="#about-team" className="transition-opacity hover:opacity-70">
+
+              <Link
+                href="#about-team"
+                className="transition-opacity hover:opacity-70"
+              >
                 About us
               </Link>
-              <Link href="#pricing" className="transition-opacity hover:opacity-70">
+
+              <Link
+                href="#pricing"
+                className="transition-opacity hover:opacity-70"
+              >
                 Price
               </Link>
-              <Link href="#portfolio" className="transition-opacity hover:opacity-70">
+
+              <Link
+                href="#portfolio"
+                className="transition-opacity hover:opacity-70"
+              >
                 Gallery
               </Link>
             </nav>
 
+            <ThemeToggle />
+
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              className="inline-flex items-center gap-3 text-sm font-semibold text-white transition-opacity hover:opacity-70"
+              className="inline-flex items-center gap-3 text-sm font-semibold transition-opacity hover:opacity-70"
               aria-label="Open menu"
             >
               <span>Menu</span>
@@ -56,15 +75,19 @@ function Header() {
             </button>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setMenuOpen(true)}
-            className="inline-flex items-center gap-3 text-sm font-semibold text-white lg:hidden"
-            aria-label="Open menu"
-          >
-            <span>Menu</span>
-            <span className="ink-menu-trigger-mark" aria-hidden="true" />
-          </button>
+          <div className="flex items-center gap-4 lg:hidden">
+            <ThemeToggle />
+
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              className="inline-flex items-center gap-3 text-sm font-semibold"
+              aria-label="Open menu"
+            >
+              <span>Menu</span>
+              <span className="ink-menu-trigger-mark" aria-hidden="true" />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -76,7 +99,6 @@ function Header() {
     </>
   );
 }
-
 
 export { Header };
 export default Header;

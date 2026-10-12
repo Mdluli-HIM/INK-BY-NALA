@@ -22,9 +22,7 @@ export function Footer() {
           <div className="hype-footer-v2__brand-word">
             <span className="hype-footer-v2__corner" />
 
-            <strong>
-              INK
-            </strong>
+            <strong>INKED</strong>
           </div>
 
           <div className="hype-footer-v2__email">
