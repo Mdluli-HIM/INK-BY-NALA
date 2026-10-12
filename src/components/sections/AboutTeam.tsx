@@ -13,7 +13,7 @@ export function AboutTeam() {
       <div className="hype-shell about-team-v2__inner">
         <div className="about-team-v2__heading">
           <span className="about-team-v2__eyebrow">
-            INK by Nala
+            INKED
           </span>
 
           <h2>
@@ -26,7 +26,7 @@ export function AboutTeam() {
           <div className="about-team-v2__side about-team-v2__side--left relative">
             <Image
               src="/images/about/team-left.jpg"
-              alt="Ink By Nala tattoo studio"
+              alt="INKED tattoo studio"
               fill
               sizes="(max-width: 768px) 42vw, 280px"
               className="about-team-v2__photo"
@@ -39,7 +39,7 @@ export function AboutTeam() {
           <div className="about-team-v2__main relative">
             <Image
               src="/images/about/team-main.jpg"
-              alt="Ink By Nala tattoo artists"
+              alt="INKED tattoo artists"
               fill
               priority
               sizes="(max-width: 768px) 92vw, 680px"
@@ -48,7 +48,7 @@ export function AboutTeam() {
 
             <div className="about-team-v2__main-index">
               <span>[ TEAM ]</span>
-              <span>Hatfield / Pretoria</span>
+              <span>Brooklyn / New York</span>
             </div>
           </div>
 
@@ -68,18 +68,17 @@ export function AboutTeam() {
 
         <div className="about-team-v2__content">
           <h3>
-            Custom ink built around
+            Custom tattoos built around
             <br className="hidden sm:block" />
-            {" "}your story
+            {" "}in ink
           </h3>
 
           <p>
-            INK by Nala is a focused, appointment-only studio built
-            around precision, patience and personal meaning. The team
-            works closely with each client to turn references,
-            memories and ideas into original tattoo designs rather
-            than simply copying existing work.
-          </p>
+            INKED is a private, appointment-first tattoo studio built around
+            original artwork, thoughtful collaboration and great craft.
+            Maya, Jordan and Alex work closely with every client to turn
+            references, memories and rough ideas into custom tattoos
+            designed specifically for the person wearing them.</p>
 
           <HypeButton
             href="#portfolio"

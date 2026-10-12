@@ -138,7 +138,7 @@ export function SiteMenuOverlay({
           <Link
             href="#hero"
             onClick={onClose}
-            aria-label="Ink By Nala home"
+            aria-label="INKED home"
             className="ink-menu__logo"
           >
             <img
@@ -246,13 +246,13 @@ export function SiteMenuOverlay({
 
             <div className="ink-menu__contact-list">
               <a
-                href={siteConfig.whatsapp}
+                href={siteConfig.sms}
                 target="_blank"
                 rel="noreferrer"
                 className="ink-menu__contact-item"
               >
                 <small>
-                  WhatsApp
+                  Text
                 </small>
 
                 <span>
@@ -278,7 +278,7 @@ export function SiteMenuOverlay({
               </a>
 
               <a
-                href="https://maps.google.com/?q=1090+Burnett+Street+Hatfield+Pretoria"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.address)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="ink-menu__contact-item ink-menu__contact-item--address"
@@ -288,9 +288,7 @@ export function SiteMenuOverlay({
                 </small>
 
                 <span>
-                  1090 Burnett Street,
-                  <br />
-                  Hatfield, Pretoria
+                  {siteConfig.address}
                 </span>
 
                 <ArrowUpRight />
@@ -302,9 +300,9 @@ export function SiteMenuOverlay({
                 </small>
 
                 <span>
-                  Mon–Sat
+                  Tue–Sun
                   <br />
-                  Appointment only
+                  Appointment preferred
                 </span>
               </div>
             </div>
@@ -334,7 +332,7 @@ export function SiteMenuOverlay({
             <span className="ink-menu__bottom-divider" />
 
             <a
-              href={siteConfig.whatsapp}
+              href={siteConfig.sms}
               target="_blank"
               rel="noreferrer"
               className="ink-menu__bottom-link"
@@ -353,7 +351,7 @@ export function SiteMenuOverlay({
 
           {/* Copyright */}
           <p className="ink-menu__copyright">
-            © Ink By Nala 2026
+            © INKED 2026
             <br />
             All rights reserved
           </p>

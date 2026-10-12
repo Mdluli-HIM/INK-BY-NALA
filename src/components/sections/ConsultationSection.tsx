@@ -47,7 +47,7 @@ export function ConsultationSection() {
         <header className="consultation-v2__header">
           <div className="consultation-v2__eyebrow">
             <span>
-              Appointment only
+              Appointment preferred
             </span>
 
             <span />
@@ -56,13 +56,13 @@ export function ConsultationSection() {
           </div>
 
           <h2>
-            Start your
+            Tell us about your
             <br />
-            tattoo project
+            next tattoo
           </h2>
 
           <p>
-            Your idea. Your story. A custom design.
+            Your idea. Your artist. A custom design.
           </p>
         </header>
 
@@ -76,30 +76,30 @@ export function ConsultationSection() {
             className="consultation-v2__info"
           >
             <span className="consultation-v2__info-kicker">
-              Custom work from the first conversation
+              Every great tattoo starts with a conversation
             </span>
 
             <h3>
-              Bring us your
+              Bring the idea.
               <br />
-              idea. We&apos;ll help
+              We&apos;ll help
               <br />
               turn it into
               <br />
-              original ink
+              something original
             </h3>
 
             <p>
-              Send us your concept, references and placement.
-              We&apos;ll discuss the project, prepare a quote
-              and develop a custom design or stencil before
-              your appointment.
+              Send us your idea, references, placement and approximate size.
+              We&apos;ll review the project, recommend the right artist
+              and send you pricing before
+              we lock in your appointment.
             </p>
 
             <div className="consultation-v2__info-meta">
-              <span>[ Custom consultation ]</span>
+              <span>[ Custom tattoo ]</span>
 
-              <span>[ Appointment only ]</span>
+              <span>[ By appointment ]</span>
             </div>
           </aside>
 
@@ -207,12 +207,12 @@ export function ConsultationSection() {
             </p>
 
             <a
-              href={siteConfig.whatsapp}
+              href={siteConfig.sms}
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4"
             >
-              Contact studio on WhatsApp
+              Contact studio on Text us
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </form>

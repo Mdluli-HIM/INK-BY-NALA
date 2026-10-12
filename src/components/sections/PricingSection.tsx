@@ -49,13 +49,13 @@ function PricingCard({
 
       <div className="pricing-card__content">
         <div>
-          <h3 className="pricing-card__title">
+          <h3 className="pricing-card__content-title pricing-card__title">
             {item.name}
           </h3>
 
           <span className="pricing-card__dash" />
 
-          <p className="pricing-card__description">
+          <p className="pricing-card__content-price pricing-card__content-description pricing-card__description">
             {item.description}
           </p>
         </div>
@@ -69,7 +69,7 @@ function PricingCard({
           className="pricing-card__button group"
         >
           <span>
-            Get a quote
+            Request a quote
           </span>
 
           <span className="pricing-card__button-arrow">
@@ -112,9 +112,9 @@ export function PricingSection() {
             </div>
 
             <h2>
-              How does pricing
+              Straightforward
               <br />
-              work with us
+              tattoo pricing
             </h2>
           </div>
 
@@ -122,9 +122,9 @@ export function PricingSection() {
             <div className="pricing-section__aside-line" />
 
             <p>
-              Every piece is custom.
+              Every project is different.
               <br />
-              Pricing depends on
+              Final pricing depends on
               <br />
               size, detail and
               <br />

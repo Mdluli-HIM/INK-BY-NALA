@@ -31,9 +31,9 @@ export function Hero() {
         <div className="flex flex-1 items-center justify-center pt-[90px]">
           <div className="w-full text-center">
             <h1 className="hero-heading">
-              Ink that tells
+              Wear in ink
               <br />
-              your story
+              in ink
             </h1>
 
             <div className="mt-8 flex justify-center md:mt-10">
@@ -41,7 +41,7 @@ export function Hero() {
                 href="#consultation"
                 className="w-full max-w-[410px]"
               >
-                Book an appointment
+                Book a consultation
               </HypeButton>
             </div>
           </div>

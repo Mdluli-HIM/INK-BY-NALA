@@ -37,11 +37,11 @@ export function Footer() {
             </div>
 
             <a
-              href={siteConfig.whatsapp}
+              href={siteConfig.sms}
               target="_blank"
               rel="noreferrer"
             >
-              WhatsApp {siteConfig.phone}
+              Text {siteConfig.phone}
             </a>
           </div>
 
@@ -138,7 +138,7 @@ export function Footer() {
             className="hype-footer-v2__consult group"
           >
             <span>
-              Start your tattoo
+              Book your tattoo
             </span>
 
             <span>
@@ -165,7 +165,7 @@ export function Footer() {
           </div>
 
           <p>
-            © INK BY NALA 2026
+            © INKED 2026
             <br />
             All rights reserved
             <span className="concept-credit">

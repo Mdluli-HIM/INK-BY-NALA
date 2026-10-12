@@ -12,7 +12,7 @@
   --color-hype-grey-500: #a8adb4;
   --color-hype-grey-300: #d0d2d2;
 
-  --color-hype-cyan: #00d5d5;
+  --color-hype-cyan: #D71920;
 }
 
 :root {
@@ -21,7 +21,7 @@
 
   --hype-black: #0b0b0b;
   --hype-white: #ffffff;
-  --hype-cyan: #00d5d5;
+  --hype-cyan: #D71920;
 
   --hype-grey-900: #323c43;
   --hype-grey-700: #535c5f;
@@ -11226,4 +11226,244 @@ button:hover .ink-menu-trigger-mark {
     margin-left: 28px;
     margin-right: 18px;
   }
+}
+
+
+/* ==========================================================
+   TEAM STATS — RESTORED DESKTOP HOVER
+   ========================================================== */
+
+.team-stats {
+  position: relative;
+}
+
+.team-stats__desktop {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  min-height: 620px;
+
+  pointer-events: auto;
+}
+
+
+/* ----------------------------------------------------------
+   Individual stat column
+---------------------------------------------------------- */
+
+.team-stats__hover-column {
+  position: relative;
+
+  min-width: 0;
+  min-height: 620px;
+
+  overflow: hidden;
+
+  border-left:
+    1px solid
+    rgba(11, 11, 11, 0.18);
+
+  pointer-events: auto;
+
+  cursor: none;
+}
+
+.team-stats__hover-column:last-child {
+  border-right:
+    1px solid
+    rgba(11, 11, 11, 0.18);
+}
+
+
+/* ----------------------------------------------------------
+   Text
+---------------------------------------------------------- */
+
+.team-stats__hover-content {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  height: 100%;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  padding:
+    48px
+    34px
+    54px;
+
+  pointer-events: none;
+}
+
+.team-stats__index {
+  display: flex;
+
+  width: 52px;
+  height: 52px;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(11, 11, 11, 0.45);
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.team-stats__copy {
+  margin-top: 55px;
+}
+
+.team-stats__copy strong {
+  display: block;
+
+  font-size:
+    clamp(
+      3rem,
+      4.3vw,
+      5.2rem
+    );
+
+  font-weight: 800;
+
+  line-height: 0.88;
+
+  letter-spacing:
+    -0.06em;
+
+  text-transform: uppercase;
+}
+
+.team-stats__copy p {
+  max-width: 230px;
+
+  margin-top: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+
+/* ==========================================================
+   CURSOR-FOLLOW IMAGE
+   ========================================================== */
+
+.team-stats__hover-image {
+  position: absolute;
+
+  z-index: 6;
+
+  width: 210px;
+  height: 275px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 14px 35px
+    rgba(0, 0, 0, 0.12);
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/*
+ * Concrete wallpaper must never intercept mouse events.
+ */
+.concrete-section-group::before,
+.concrete-section-group::after {
+  pointer-events: none !important;
+}
+
+
+/*
+ * Make sure Stats itself receives pointer movement.
+ */
+.concrete-section-group .team-stats,
+.concrete-section-group .team-stats__desktop,
+.concrete-section-group .team-stats__hover-column {
+  pointer-events: auto !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 1023px) {
+  .team-stats__desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-stats__mobile {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================================
+   PRICING — TRUE CARD CONTENT ALIGNMENT
+   ========================================================== */
+
+@media (min-width: 1024px) {
+
+  /*
+   * Every title receives enough room for TWO lines.
+   *
+   * TATTOO MINIMUM:
+   * TATTOO
+   * MINIMUM
+   *
+   * HALF DAY / FULL DAY therefore reserve the same space.
+   */
+  #pricing .pricing-card__content-title {
+    min-height: 1.9em;
+    margin-bottom: 0 !important;
+  }
+
+  /*
+   * Give every description the same vertical slot.
+   */
+  #pricing .pricing-card__content-description {
+    min-height: 4.7em;
+  }
+
+  /*
+   * Price itself should not introduce a different vertical offset.
+   */
+  #pricing .pricing-card__content-price {
+    margin-top: 0;
+  }
+}
+
+
+/* ==========================================================
+   INKED — BRAND ACCENT
+   ========================================================== */
+
+:root {
+  --inked-red: #D71920;
+
+  /*
+   * Legacy variable retained because existing components
+   * already reference it throughout the site.
+   */
+  --hype-cyan: var(--inked-red);
 }

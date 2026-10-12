@@ -1,0 +1,45 @@
+ ... by Nala Tattoo Machine Logo.png | Bin [31m439226[m -> [32m0[m bytes
+ public/icons/hype-logo.png          | Bin [31m692888[m -> [32m0[m bytes
+ public/icons/hype-logo.svg          |   9 [31m-[m
+ public/images/about/image copy.png  | Bin [31m784433[m -> [32m0[m bytes
+ .../images/about/stats/stat-a.jpg   | Bin [31m2039657[m -> [32m560424[m bytes
+ .../images/about/stats/stat-b.jpg   | Bin [31m2410106[m -> [32m876485[m bytes
+ .../images/about/stats/stat-c.jpg   | Bin [31m3015193[m -> [32m744834[m bytes
+ .../images/about/stats/stat-d.jpg   | Bin [31m1723467[m -> [32m666588[m bytes
+ public/images/about/team-left.jpg   | Bin [31m1159426[m -> [32m1072635[m bytes
+ public/images/about/team-main.jpg   | Bin [31m2255454[m -> [32m471808[m bytes
+ public/images/about/team-right.jpg  | Bin [31m2003657[m -> [32m1006444[m bytes
+ .../consultation-studio.jpg         | Bin [31m2255454[m -> [32m4357717[m bytes
+ .../gallery/portfolio/work-01.jpg   | Bin [31m2232236[m -> [32m984575[m bytes
+ .../gallery/portfolio/work-02.jpg   | Bin [31m2042666[m -> [32m978124[m bytes
+ .../gallery/portfolio/work-03.jpg   | Bin [31m1969402[m -> [32m1235199[m bytes
+ .../gallery/portfolio/work-04.jpg   | Bin [31m1666270[m -> [32m1476646[m bytes
+ .../gallery/portfolio/work-05.jpg   | Bin [31m2109151[m -> [32m406169[m bytes
+ .../gallery/portfolio/work-06.jpg   | Bin [31m2438939[m -> [32m230267[m bytes
+ .../gallery/portfolio/work-07.jpg   | Bin [31m2425781[m -> [32m697945[m bytes
+ .../gallery/portfolio/work-08.jpg   | Bin [31m2343600[m -> [32m989890[m bytes
+ public/images/hero/hero-main.jpg    | Bin [31m1562114[m -> [32m412875[m bytes
+ public/images/menu/menu-artist.png  | Bin [31m2208559[m -> [32m2650391[m bytes
+ public/images/pricing/blast.jpg     | Bin [31m2243160[m -> [32m471059[m bytes
+ public/images/pricing/hyper.jpg     | Bin [31m2406076[m -> [32m356237[m bytes
+ public/images/pricing/quantum.jpg   | Bin [31m1992542[m -> [32m563934[m bytes
+ .../images/story/feature-object.png | Bin [31m837290[m -> [32m1203012[m bytes
+ .../globals.before-nav-refine.css   |   4 [32m+[m[31m-[m
+ src/app/globals.css                 | 244 [32m++++++[m[31m-[m
+ src/app/layout.tsx                  |  79 [32m++[m[31m-[m
+ src/components/layout/Footer.tsx    |   8 [32m+[m[31m-[m
+ src/components/layout/Header.tsx    |   4 [32m+[m[31m-[m
+ .../layout/MenuTalkPanel.tsx        |   4 [32m+[m[31m-[m
+ ...enuOverlay.before-nav-refine.tsx | 360 [31m-----------[m
+ .../layout/SiteMenuOverlay.tsx      |  20 [32m+[m[31m-[m
+ .../sections/AboutTeam.tsx          |  23 [32m+[m[31m-[m
+ .../ConsultationSection.tsx         |  32 [32m+[m[31m-[m
+ src/components/sections/Hero.tsx    |   6 [32m+[m[31m-[m
+ .../sections/PortfolioShowcase.tsx  |   4 [32m+[m[31m-[m
+ .../sections/PricingSection.tsx     |  14 [32m+[m[31m-[m
+ .../sections/StoryFeature.tsx       |  12 [32m+[m[31m-[m
+ .../sections/TeamStats.tsx          | 310 [32m++++[m[31m-----[m
+ src/data/gallery.ts                 |  16 [32m+[m[31m-[m
+ src/data/pricing.ts                 |  16 [32m+[m[31m-[m
+ src/data/site.ts                    |  93 [32m++[m[31m-[m
+ 44 files changed, 596 insertions(+), 662 deletions(-)

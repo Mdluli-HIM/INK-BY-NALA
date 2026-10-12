@@ -1,67 +1,63 @@
 "use client";
 
-import { useRef, useState } from "react";
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
   useSpring,
 } from "framer-motion";
+import {
+  useRef,
+  useState,
+  type MouseEvent,
+} from "react";
 
-import { RadialMark } from "@/components/ui/RadialMark";
-
-type TeamStat = {
-  index: string;
+type Stat = {
+  label: string;
   value: string;
   description: string;
   image: string;
   rotation: number;
-  imagePosition?: string;
 };
 
-const stats: TeamStat[] = [
+const stats: Stat[] = [
   {
-    index: "A",
-    value: "6+ YRS",
-    description: "experience in the chair",
+    label: "A",
+    value: "8+ YRS",
+    description: "tattooing experience",
     image: "/images/about/stats/stat-a.jpg",
-    rotation: -8,
-    imagePosition: "center",
+    rotation: -4,
   },
   {
-    index: "B",
+    label: "B",
     value: "CUSTOM",
-    description: "original designs built around your idea",
+    description: "every piece designed for the client",
     image: "/images/about/stats/stat-b.jpg",
-    rotation: 4,
-    imagePosition: "center",
+    rotation: 3,
   },
   {
-    index: "C",
-    value: "4.9★",
-    description: "strong customer reputation",
+    label: "C",
+    value: "BROOKLYN",
+    description: "private appointment-first studio",
     image: "/images/about/stats/stat-c.jpg",
-    rotation: 7,
-    imagePosition: "center",
+    rotation: -3,
   },
   {
-    index: "D",
-    value: "2",
-    description: "artists — Moh & Eugene",
+    label: "D",
+    value: "3",
+    description: "resident artists",
     image: "/images/about/stats/stat-d.jpg",
-    rotation: -5,
-    imagePosition: "center",
+    rotation: 4,
   },
 ];
 
-/* ==================================================
-   DESKTOP COLUMN
-================================================== */
+type StatColumnProps = {
+  stat: Stat;
+};
 
-function DesktopStatColumn({
+function StatColumn({
   stat,
-}: {
-  stat: TeamStat;
-}) {
+}: StatColumnProps) {
   const columnRef =
     useRef<HTMLDivElement>(null);
 
@@ -72,129 +68,68 @@ function DesktopStatColumn({
   const rawY = useMotionValue(0);
 
   const x = useSpring(rawX, {
-    stiffness: 250,
-    damping: 28,
+    stiffness: 420,
+    damping: 36,
     mass: 0.35,
   });
 
   const y = useSpring(rawY, {
-    stiffness: 250,
-    damping: 28,
+    stiffness: 420,
+    damping: 36,
     mass: 0.35,
   });
 
-  function updatePointer(
-    event: React.PointerEvent<HTMLDivElement>,
-  ) {
-    if (
-      event.pointerType === "touch"
-    ) {
-      return;
-    }
-
-    const column =
+  const updatePointer = (
+    event: MouseEvent<HTMLDivElement>,
+  ) => {
+    const element =
       columnRef.current;
 
-    if (!column) {
-      return;
-    }
+    if (!element) return;
 
     const rect =
-      column.getBoundingClientRect();
+      element.getBoundingClientRect();
 
     rawX.set(
-      event.clientX -
-        rect.left,
+      event.clientX - rect.left,
     );
 
     rawY.set(
-      event.clientY -
-        rect.top,
+      event.clientY - rect.top,
     );
-  }
+  };
 
-  function handlePointerEnter(
-    event: React.PointerEvent<HTMLDivElement>,
-  ) {
-    if (
-      event.pointerType === "touch"
-    ) {
-      return;
-    }
-
+  const handleMouseEnter = (
+    event: MouseEvent<HTMLDivElement>,
+  ) => {
     updatePointer(event);
     setActive(true);
-  }
+  };
+
+  const handleMouseMove = (
+    event: MouseEvent<HTMLDivElement>,
+  ) => {
+    updatePointer(event);
+  };
+
+  const handleMouseLeave = () => {
+    setActive(false);
+  };
 
   return (
     <div
       ref={columnRef}
-      onPointerEnter={
-        handlePointerEnter
-      }
-      onPointerMove={
-        updatePointer
-      }
-      onPointerLeave={() =>
-        setActive(false)
-      }
-      className="team-stat-desktop-column"
+      className="team-stats__hover-column"
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
-      <motion.div
-        aria-hidden="true"
-        initial={false}
-        animate={{
-          opacity:
-            active ? 1 : 0,
-
-          scale:
-            active
-              ? 1
-              : 0.92,
-        }}
-        transition={{
-          opacity: {
-            duration: 0.18,
-          },
-
-          scale: {
-            duration: 0.35,
-            ease: [
-              0.22,
-              1,
-              0.36,
-              1,
-            ],
-          },
-        }}
-        style={{
-          left: x,
-          top: y,
-          x: "-50%",
-          y: "-50%",
-          rotate:
-            stat.rotation,
-        }}
-        className="team-stat-hover-image"
-      >
-        <div
-          className="team-stat-hover-image__photo"
-          style={{
-            backgroundImage:
-              `url('${stat.image}')`,
-
-            backgroundPosition:
-              stat.imagePosition,
-          }}
-        />
-      </motion.div>
-
-      <div className="team-stat-desktop-content">
-        <span className="team-stat-letter">
-          {stat.index}
+      <div className="team-stats__hover-content">
+        <span className="team-stats__index">
+          {stat.label}
         </span>
 
-        <div className="team-stat-copy">
+        <div className="team-stats__copy">
           <strong>
             {stat.value}
           </strong>
@@ -204,23 +139,59 @@ function DesktopStatColumn({
           </p>
         </div>
       </div>
+
+      <motion.div
+        className="team-stats__hover-image"
+        style={{
+          left: x,
+          top: y,
+          x: "-50%",
+          y: "-50%",
+          rotate: stat.rotation,
+        }}
+        initial={false}
+        animate={{
+          opacity: active ? 1 : 0,
+          scale: active
+            ? 1
+            : 0.88,
+        }}
+        transition={{
+          opacity: {
+            duration: 0.16,
+          },
+          scale: {
+            duration: 0.22,
+            ease: [
+              0.22,
+              1,
+              0.36,
+              1,
+            ],
+          },
+        }}
+      >
+        <Image
+          src={stat.image}
+          alt=""
+          fill
+          sizes="260px"
+          className="object-cover"
+        />
+      </motion.div>
     </div>
   );
 }
 
-/* ==================================================
-   MOBILE BLOCKS
-================================================== */
-
-function MobileStatText({
+function MobileStat({
   stat,
 }: {
-  stat: TeamStat;
+  stat: Stat;
 }) {
   return (
-    <div className="team-stat-mobile__text">
-      <span className="team-stat-letter">
-        {stat.index}
+    <div className="team-stats__mobile-stat">
+      <span className="team-stats__index">
+        {stat.label}
       </span>
 
       <div>
@@ -236,29 +207,20 @@ function MobileStatText({
   );
 }
 
-function MobileStatImage({
+function MobileImage({
   stat,
-  showMark = false,
 }: {
-  stat: TeamStat;
-  showMark?: boolean;
+  stat: Stat;
 }) {
   return (
-    <div className="team-stat-mobile__image-wrap">
-      <div
-        className="team-stat-mobile__image"
-        style={{
-          backgroundImage:
-            `url('${stat.image}')`,
-
-          backgroundPosition:
-            stat.imagePosition,
-        }}
+    <div className="team-stats__mobile-image">
+      <Image
+        src={stat.image}
+        alt=""
+        fill
+        sizes="50vw"
+        className="object-cover"
       />
-
-      {showMark && (
-        <RadialMark className="team-stat-mobile__mark" />
-      )}
     </div>
   );
 }
@@ -269,68 +231,60 @@ export function TeamStats() {
       data-cursor-tone="dark"
       className="team-stats"
     >
-      {/* DESKTOP */}
+      {/* Desktop */}
       <div className="team-stats__desktop hype-shell">
-        <div className="team-stats__desktop-grid">
-          {stats.map(
-            (stat) => (
-              <DesktopStatColumn
-                key={
-                  stat.index
-                }
-                stat={stat}
-              />
-            ),
-          )}
-        </div>
+        {stats.map((stat) => (
+          <StatColumn
+            key={stat.label}
+            stat={stat}
+          />
+        ))}
       </div>
 
-      {/* MOBILE */}
+      {/* Mobile */}
       <div className="team-stats__mobile">
-        <div className="team-stat-mobile__row">
-          <MobileStatText
+        <div className="team-stats__mobile-row">
+          <MobileStat
             stat={stats[0]}
           />
 
-          <MobileStatImage
+          <MobileImage
             stat={stats[0]}
-            showMark
           />
         </div>
 
-        <div className="team-stat-mobile__row">
-          <MobileStatImage
+        <div className="team-stats__mobile-row">
+          <MobileImage
             stat={stats[1]}
           />
 
-          <MobileStatText
+          <MobileStat
             stat={stats[1]}
           />
         </div>
 
-        <div className="team-stat-mobile__row">
-          <MobileStatText
+        <div className="team-stats__mobile-row">
+          <MobileStat
             stat={stats[2]}
           />
 
-          <MobileStatImage
+          <MobileImage
             stat={stats[2]}
-            showMark
           />
         </div>
 
-        <div className="team-stat-mobile__row">
-          <MobileStatImage
+        <div className="team-stats__mobile-row">
+          <MobileImage
             stat={stats[3]}
           />
 
-          <MobileStatText
+          <MobileStat
             stat={stats[3]}
           />
         </div>
       </div>
-
-      <div className="team-stats__end-line" />
     </section>
   );
 }
+
+export default TeamStats;

@@ -1,54 +1,97 @@
 export const siteConfig = {
-  name: "Ink By Nala Tattoos",
-  shortName: "Ink By Nala",
+  name: "INKED",
+  shortName: "INKED",
 
-  tagline: "Ink that tells your story.",
+  tagline: "Wear in ink.",
 
   description:
-    "Ink By Nala Tattoos is an appointment-only custom tattoo studio in Hatfield, Pretoria, specialising in realism, black-and-grey work, lettering, sleeves and story-driven custom tattoo designs.",
+    "INKED is a private, appointment-first tattoo studio in Brooklyn, New York creating custom tattoos built around personal ideas, references and stories.",
 
-  location: "Hatfield, Pretoria",
-  address: "1090 Burnett Street, Hatfield, Pretoria, Gauteng, South Africa",
+  location: "Brooklyn, New York",
 
-  phone: "065 178 0709",
-  whatsapp: "https://wa.me/27651780709",
+  address:
+    "217 Studio Row, Brooklyn, NY 11249",
 
-  instagramHandle: "@ink_by_nala",
-  instagram: "https://www.instagram.com/ink_by_nala/",
+  phone: "(212) 555-0148",
 
-  website: "https://inkbynala.live/",
+  phoneHref:
+    "tel:+12125550148",
 
-  hours: "Mon–Sat · Appointment only",
+  sms:
+    "sms:+12125550148",
 
-  logo: "/icons/hype-logo.png",
-  logoAlt: "Ink By Nala Tattoos",
+  email:
+    "hello@inkedstudio.com",
 
-  artists: ["Moh", "Eugene"],
+  instagramHandle:
+    "@inked.studio",
+
+  instagram:
+    "https://www.instagram.com/inked.studio/",
+
+  website:
+    "https://inkedstudio.com/",
+
+  hours:
+    "Tue–Sun · 11 AM–8 PM · Appointment preferred",
+
+  logo:
+    "/icons/inked-logo.png",
+
+  logoAlt:
+    "INKED tattoo studio",
+
+  artists: [
+    "Maya",
+    "Jordan",
+    "Alex",
+  ],
 };
+
 
 export const headerNavigation = [
   {
     label: "Main",
-    href: "#hero",
+    href: "/",
   },
   {
     label: "About us",
-    href: "#about-team",
+    href: "/about",
   },
   {
-    label: "Price",
-    href: "#pricing",
+    label: "Artists",
+    href: "/artists",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
   },
   {
     label: "Gallery",
-    href: "#portfolio",
-  },
-  {
-    label: "Contact",
-    href: "#consultation",
+    href: "/gallery",
   },
 ];
 
-export const mainNavigation = headerNavigation.filter(
-  (item) => item.href !== "#hero",
-);
+
+export const mainNavigation = [
+  {
+    label: "About us",
+    href: "/about",
+  },
+  {
+    label: "Artists",
+    href: "/artists",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+  },
+  {
+    label: "Gallery",
+    href: "/gallery",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];

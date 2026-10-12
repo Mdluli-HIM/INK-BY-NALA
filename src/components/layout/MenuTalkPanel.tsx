@@ -15,9 +15,9 @@ const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
 const talkItems: TalkItem[] = [
   {
-    label: "WhatsApp",
+    label: "Text",
     value: siteConfig.phone,
-    href: siteConfig.whatsapp,
+    href: siteConfig.sms,
   },
   {
     label: "Phone",

@@ -29,7 +29,7 @@ export function PortfolioShowcase() {
           </h2>
 
           <p>
-            A selection of original work created by Ink By Nala
+            A selection of original work created by INKED
             across different styles, techniques and placements.
           </p>
         </header>
@@ -89,7 +89,7 @@ export function PortfolioShowcase() {
         <footer className="portfolio-showcase__footer">
           <div>
             <span className="hype-label text-white/40">
-              INK by Nala / Hatfield, Pretoria
+              INKED / BROOKLYN, NEW YORK
             </span>
 
             <p>
